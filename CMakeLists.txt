@@ -42,7 +42,7 @@ install(FILES systemd/joycond.service DESTINATION etc/systemd/system
 install(FILES systemd/joycond.conf DESTINATION etc/modules-load.d
         PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ
         )
-install(FILES doc/joycond.1 DESTINATION /usr/share/man/man1
+install(FILES doc/joycond.1 DESTINATION usr/share/man/man1
         PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ
         )
 
