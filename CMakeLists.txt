@@ -31,19 +31,19 @@ target_link_libraries(
 
 add_subdirectory(src)
 
-install(TARGETS joycond DESTINATION usr/bin/
+install(TARGETS joycond DESTINATION /var/usrlocal/usr/bin/
         PERMISSIONS OWNER_WRITE OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
         )
-install(FILES udev/89-joycond.rules udev/72-joycond.rules DESTINATION lib/udev/rules.d/
+install(FILES udev/89-joycond.rules udev/72-joycond.rules DESTINATION /var/usrlocal/lib/udev/rules.d/
         PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ 
         )
-install(FILES systemd/joycond.service DESTINATION etc/systemd/system
+install(FILES systemd/joycond.service DESTINATION /var/usrlocal/etc/systemd/system
         PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ
         )
-install(FILES systemd/joycond.conf DESTINATION etc/modules-load.d
+install(FILES systemd/joycond.conf DESTINATION /var/usrlocal/etc/modules-load.d
         PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ
         )
-install(FILES doc/joycond.1 DESTINATION usr/share/man/man1
+install(FILES doc/joycond.1 DESTINATION /var/usrlocal/usr/share/man/man1
         PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ
         )
 
