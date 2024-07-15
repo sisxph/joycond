@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(joycond)
 set(VERSION "0.1")
+
 # default CMAKE INSTALL PREFIX so install can use relative paths
 if(NOT CMAKE_INSTALL_PREFIX)
 	set(CMAKE_INSTALL_PREFIX /)
