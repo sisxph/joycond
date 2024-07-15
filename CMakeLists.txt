@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 project(joycond)
-
+set(VERSION "0.1")
 # default CMAKE INSTALL PREFIX so install can use relative paths
 if(NOT CMAKE_INSTALL_PREFIX)
 	set(CMAKE_INSTALL_PREFIX /)
@@ -54,3 +54,11 @@ add_custom_command(
     COMMAND xargs rm -vf < install_manifest.txt || echo Nothing in
             install_manifest.txt to be uninstalled!
 )
+
+set(CPACK_PACKAGE_VERSION ${VERSION})
+set(CPACK_GENERATOR "RPM")
+set(CPACK_PACKAGE_NAME "joycond")
+set(CPACK_PACKAGE_RELEASE 1)
+set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CPACK_PACKAGE_RELEASE}.${CMAKE_SYSTEM_PROCESSOR}")
+include(CPack)
