@@ -16,7 +16,7 @@ find_package(PkgConfig)
 pkg_check_modules(LIBEVDEV REQUIRED libevdev)
 pkg_check_modules(LIBUDEV REQUIRED libudev)
 
-add_executable(joycond "")
+add_executable(joycond "" )
 target_compile_options(joycond PRIVATE -Wall -Werror)
 include_directories(
     include/
@@ -47,7 +47,7 @@ install(FILES doc/joycond.1 DESTINATION /var/usrlocal/usr/share/man/man1
         PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ
         )
 
-add_custom_target("uninstall" COMMENT "Uninstall installed files")
+add_custom_target("uninstall" COMMENT "Uninstall installed files" )
 add_custom_command(
     TARGET "uninstall"
     POST_BUILD
@@ -57,8 +57,8 @@ add_custom_command(
 )
 
 set(CPACK_PACKAGE_VERSION ${VERSION})
-set(CPACK_GENERATOR "RPM")
-set(CPACK_PACKAGE_NAME "joycond")
+set(CPACK_GENERATOR "RPM" )
+set(CPACK_PACKAGE_NAME "joycond" )
 set(CPACK_PACKAGE_RELEASE 1)
 set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CPACK_PACKAGE_RELEASE}.${CMAKE_SYSTEM_PROCESSOR}")
