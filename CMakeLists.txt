@@ -3,9 +3,7 @@ project(joycond)
 set(VERSION "0.1")
 
 # default CMAKE INSTALL PREFIX so install can use relative paths
-if(NOT CMAKE_INSTALL_PREFIX)
-	set(CMAKE_INSTALL_PREFIX ~/joycondir/install/ )
-endif()
+set(CMAKE_INSTALL_PREFIX ~/joycondir/install/ )
 
 set(CMAKE_CXX_STANDARD 17)
 
